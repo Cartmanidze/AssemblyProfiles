@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\IFactoryNetwork.cs" />
     <Compile Include="Helpers\Configuration\ConfigValueGetterHelper.cs" />
     <Compile Include="Helpers\InnerText\InnerTextHelper.cs" />
     <Compile Include="Helpers\JsonConverter\JsonConverterHelper.cs" />
