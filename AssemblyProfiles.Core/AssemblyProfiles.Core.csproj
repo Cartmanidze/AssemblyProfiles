@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +53,7 @@
     <Compile Include="Services\HtmlParseService\IHtmlParseService.cs" />
     <Compile Include="Services\RecordingService\IRecordingService.cs" />
     <Compile Include="Services\SeleniumService\ISeleniumService.cs" />
+    <Compile Include="Storage\IProfile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
