@@ -1,12 +1,12 @@
 ﻿using AssemblyProfiles.Core.Services;
 using AssemblyProfiles.Core.Services.ApiService;
 using AssemblyProfiles.Core.Services.HtmlParseService;
-using AssemblyVkProfile.SocialNetworks.LinkedIn;
+using AssemblyProfile.SocialNetworks.LinkedIn;
 using AssemblyProfiles.Core.Factory;
-using AssemblyVkProfile.SocialNetworksServices.LinkedIn;
+using AssemblyProfile.SocialNetworksServices.LinkedIn;
 using AssemblyProfiles.Core.Helpers;
 
-namespace AssemblyVkProfile.FactorySocialNetworks.LinkedInFactory
+namespace AssemblyProfile.FactorySocialNetworks.LinkedInFactory
 {
     internal class LinkedInFactory : IFactoryNetwork
     {
