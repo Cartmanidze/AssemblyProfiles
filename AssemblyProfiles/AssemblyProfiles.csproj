@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\LinkedInProfile.cs" />
+    <Compile Include="FactorySocialNetworks\LinkedInFactory\LinkedInFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
