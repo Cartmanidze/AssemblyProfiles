@@ -8,7 +8,7 @@ namespace AssemblyProfiles.Core.RegisterFactory
 {
     public static class RegisterFactory
     {
-        public static Dictionary<IFactoryNetwork, IProfile> RegisteredFactory { get; set; } =  new Dictionary<IFactoryNetwork, IProfile>();
+        public static Dictionary<IFactoryNetwork, IProfile> RegisteredFactory =  new Dictionary<IFactoryNetwork, IProfile>();
 
         /// <summary>
         /// Регистрация фабрики
