@@ -13,8 +13,17 @@ namespace AssemblyProfile.SocialNetworks.LinkedIn
         private  HtmlDocument _htmlDocument;
 
         private const string _xPathContacts = "//div[@class='pv-profile-section__section-info section-info']";
+
         private const string _xPathProfileName = "//li[@class='inline t-24 t-black t-normal break-words']";
+
         private const string _xPathWorkingExpereince = "//a[@data-control-name='background_details_company']";
+
+        private const string _xPathEducation = "//a[@data-control-name='background_details_school']";
+
+        private const string _xPathLicense = "//div[@class='pv-certifications__summary-info pv-entity__summary-info pv-entity__summary-info--background-section ']";
+
+        private const string _xPathArchivments = "//div[@class='pv-accomplishments-block__content break-words']";
+
         IProfile IHtmlParseService.GetProfileFromHtml(object html)
         {
             if (html is KeyValuePair<string, string> sources)
@@ -46,6 +55,7 @@ namespace AssemblyProfile.SocialNetworks.LinkedIn
             _htmlDocument.LoadHtml(source);
             return GetNodeValue(_xPathContacts);
         }
+
         private List<string> GetWorkingExpereinces()
         {
             return GetNodeValuesList(_xPathWorkingExpereince);
@@ -55,8 +65,7 @@ namespace AssemblyProfile.SocialNetworks.LinkedIn
         {
             List<string> education = new List<string>();
             HtmlNodeCollection nodes = _htmlDocument.DocumentNode
-                .SelectNodes
-                ("//a[@data-control-name='background_details_school']");
+                .SelectNodes(_xPathEducation);
             if (nodes != null)
             {
                 foreach (var node in nodes)
@@ -75,8 +84,7 @@ namespace AssemblyProfile.SocialNetworks.LinkedIn
         {
             List<string> licenses = new List<string>();
             HtmlNodeCollection nodes = _htmlDocument.DocumentNode
-                .SelectNodes
-                ("//div[@class='pv-certifications__summary-info pv-entity__summary-info pv-entity__summary-info--background-section ']");
+                .SelectNodes(_xPathLicense);
             if (nodes != null)
             {
                 foreach (var node in nodes)
@@ -90,12 +98,12 @@ namespace AssemblyProfile.SocialNetworks.LinkedIn
             }
             return licenses;
         }
+
         private List<string> GetAchievements()
         {
             List<string> achievements = new List<string>();
             HtmlNodeCollection nodes = _htmlDocument.DocumentNode
-                .SelectNodes
-                ("//div[@class='pv-accomplishments-block__content break-words']");
+                .SelectNodes(_xPathArchivments);
             if (nodes != null)
             {
                 foreach (var node in nodes)
